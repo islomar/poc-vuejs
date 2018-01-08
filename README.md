@@ -5,6 +5,16 @@ Playing around with Vue.js :-)
 * Vue.js is an MIT-licensed open source project.
 * Vue (pronounced /vjuː/, like view) is a progressive framework for building user interfaces.
 * **Composing with components**: In Vue, a component is essentially a Vue instance with pre-defined options
+* example of what an app’s template might look like with components:
+```
+<div id="app">
+  <app-nav></app-nav>
+  <app-view>
+    <app-sidebar></app-sidebar>
+    <app-content></app-content>
+  </app-view>
+</div>
+```
 
 ## Development environment
 * Install Vue Devtools (FF + Chrome) https://github.com/vuejs/vue-devtools#vue-devtools
