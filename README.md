@@ -1,7 +1,7 @@
 # Proof of concept about Vue.js
 Playing around with Vue.js :-)
 
-## Some concepts about Vue.js
+## Introduction
 * Vue.js is an MIT-licensed open source project.
 * Vue (pronounced /vjuː/, like view) is a progressive framework for building user interfaces.
 * **Composing with components**: In Vue, a component is essentially a Vue instance with pre-defined options
@@ -15,6 +15,16 @@ Playing around with Vue.js :-)
   </app-view>
 </div>
 ```
+
+## The Vue Instance
+* Every Vue application starts by creating a new Vue instance with the Vue function
+* Inspired by MVVM pattern: https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93viewmodel
+* As a convention, we often use the variable vm (short for ViewModel) to refer to our Vue instance.
+* When you create a Vue instance, you pass in an **options object**.
+* A Vue application consists of a root Vue instance created with new Vue, optionally organized into a tree of nested, reusable components.
+* When a Vue instance is created, **it adds all the properties found in its data object to Vue’s reactivity system**.
+* It should be noted that properties in data are only reactive if they existed when the instance was created.
+* **Instance Lifecycle Hooks**: Each Vue instance goes through a series of initialization steps when it’s created
 
 ## Development environment
 * Install Vue Devtools (FF + Chrome) https://github.com/vuejs/vue-devtools#vue-devtools

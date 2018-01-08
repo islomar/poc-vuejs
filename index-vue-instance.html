@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>The Vue instance</title>
+    <script src="https://unpkg.com/vue"></script>
+</head>
+
+<body>
+    <div id="app">
+        <p>{{ obj.foo }}</p>
+        <!-- this will no longer update obj.foo! -->
+        <button @click="obj.foo = 'baz'">Change it</button>
+    </div>
+
+    <div id="example">
+    </div>
+
+    <script>
+
+        var obj = {
+            foo: 'bar'
+        }
+
+        Object.freeze(obj)
+
+        new Vue({
+            el: '#app',
+            data() {
+                return {
+                    obj
+                }
+            }
+        })
+
+        // In addition to data properties, Vue instances expose a number of useful instance properties and methods.
+        // These are prefixed with $ to differentiate them from user-defined properties.
+        var data = { a: 1 }
+        var vm = new Vue({
+            el: '#example',
+            data: data
+        })
+
+        vm.$data === data // => true
+        vm.$el === document.getElementById('example') // => true
+
+        // $watch is an instance method
+        vm.$watch('a', function (newValue, oldValue) {
+            // This callback will be called when `vm.a` changes
+        })
+
+        // Lifecycle hooks
+        new Vue({
+            data: {
+                a: 1
+            },
+            created: function () {
+                // `this` points to the vm instance
+                console.log('a is: ' + this.a)
+            }
+        })
+        // => "a is: 1"
+
+    </script>
+</body>
+
+</html>
