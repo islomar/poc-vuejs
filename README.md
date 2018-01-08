@@ -12,6 +12,7 @@ Playing around with Vue.js :-)
 * NPM is the recommended installation method when building large scale applications with Vue.
 * Vue.js provides an official CLI for quickly scaffolding ambitious Single Page Applications.
 * CDN: Recommended: https://cdn.jsdelivr.net/npm/vue, which will reflect the latest version as soon as it is published to npm. Also available on unpkg and cdnjs
+* Directives are prefixed with v- to indicate that they are special attributes provided by Vue, and as you may have guessed, they apply special reactive behavior to the rendered DOM.
 
 
 ## Interesting links
