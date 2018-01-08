@@ -33,7 +33,7 @@ Playing around with Vue.js :-)
 * All Vue.js templates are valid HTML that can be parsed by spec-compliant browsers and HTML parsers.
 * Interpolations
     * Text
-    * Raw HTML
+    * Raw HTML: Dynamically rendering arbitrary HTML on your website can be very dangerous because it can easily lead to XSS vulnerabilities. Only use HTML interpolation on trusted content and never on user-provided content.
 
 
 ## Development environment
