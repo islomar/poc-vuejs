@@ -25,6 +25,16 @@ Playing around with Vue.js :-)
 * When a Vue instance is created, **it adds all the properties found in its data object to Vue’s reactivity system**.
 * It should be noted that properties in data are only reactive if they existed when the instance was created.
 * **Instance Lifecycle Hooks**: Each Vue instance goes through a series of initialization steps when it’s created
+* **Lifecycle diagram**: https://vuejs.org/v2/guide/instance.html#Lifecycle-Diagram
+
+
+## Template syntax
+* Vue.js uses an HTML-based template syntax that allows you to declaratively bind the rendered DOM to the underlying Vue instance’s data.
+* All Vue.js templates are valid HTML that can be parsed by spec-compliant browsers and HTML parsers.
+* Interpolations
+    * Text
+    * Raw HTML
+
 
 ## Development environment
 * Install Vue Devtools (FF + Chrome) https://github.com/vuejs/vue-devtools#vue-devtools
