@@ -4,7 +4,7 @@ Playing around with Vue.js :-)
 ## Some concepts about Vue.js
 * Vue.js is an MIT-licensed open source project.
 * Vue (pronounced /vjuː/, like view) is a progressive framework for building user interfaces.
-
+* **Composing with components**: In Vue, a component is essentially a Vue instance with pre-defined options
 
 ## Development environment
 * Install Vue Devtools (FF + Chrome) https://github.com/vuejs/vue-devtools#vue-devtools
