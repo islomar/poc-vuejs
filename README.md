@@ -36,6 +36,11 @@ Playing around with Vue.js :-)
     * Raw HTML: Dynamically rendering arbitrary HTML on your website can be very dangerous because it can easily lead to XSS vulnerabilities. Only use HTML interpolation on trusted content and never on user-provided content.
 
 
+## Testing
+* https://blog.octo.com/en/tdd-with-vue-js/
+* https://vuejsdevelopers.com/2017/12/25/vue-js-test-driven-development-tdd/
+
+
 ## Development environment
 * Install Vue Devtools (FF + Chrome) https://github.com/vuejs/vue-devtools#vue-devtools
 * NPM is the recommended installation method when building large scale applications with Vue. It pairs nicely with module bundlers such as Webpack or Browserify.
