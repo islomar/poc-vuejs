@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Template syntax</title>
+    <script src="https://unpkg.com/vue"></script>
+</head>
+
+<body>
+
+    <div id="app">Message: {{ msg }}</div>
+    <div id="app2" v-once>This will never change: {{ msg }}</div>
+
+    <p id="app3">Using mustaches: {{ rawHtml }}</p>
+    <p id="app4">Using v-html directive: <span v-html="rawHtml"></span></p>
+
+    <div v-bind:id="dynamicId"></div>
+    <button id='app6' v-bind:disabled="isButtonDisabled">Button</button>
+
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                msg: 'Hello Vue!'
+            }
+        })
+
+        // You can also perform one-time interpolations that do not update on data change by using the v-once directive
+        var app2 = new Vue({
+            el: '#app2',
+            data: {
+                msg: 'Hello Vue!'
+            }
+        })
+
+        // Raw HTML
+        var app3 = new Vue({
+            el: '#app3',
+            data: {
+                rawHtml: '<span style="color: red">This should be red.</span>'
+            }
+        })
+
+        var app4 = new Vue({
+            el: '#app4',
+            data: {
+                rawHtml: '<span style="color: red">This should be red.</span>'
+            }
+        })
+
+        var app5 = new Vue({
+            el: '#app6',
+            data: {
+                isButtonDisabled: true
+            }
+        })
+    </script>
+</body>
+
+</html>
