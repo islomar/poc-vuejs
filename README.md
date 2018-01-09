@@ -42,6 +42,13 @@ Playing around with Vue.js :-)
   * v-click: `<a v-on:click="doSomething">` >> `<a @click="doSomething">`
 
 
+## Computed properties and watchers
+* For any complex logic, you should use a computed property.
+* Computed properties are cached based on their dependencies. A computed property will only re-evaluate when some of its dependencies have changed.
+* In comparison, a method invocation will always run the function whenever a re-render happens
+* Vue does provide a more generic way to observe and react to data changes on a Vue instance: **watch properties**.
+
+
 ## Testing
 * https://blog.octo.com/en/tdd-with-vue-js/
 * https://vuejsdevelopers.com/2017/12/25/vue-js-test-driven-development-tdd/
