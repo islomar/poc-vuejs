@@ -47,6 +47,7 @@ Playing around with Vue.js :-)
 * Computed properties are cached based on their dependencies. A computed property will only re-evaluate when some of its dependencies have changed.
 * In comparison, a method invocation will always run the function whenever a re-render happens
 * Vue does provide a more generic way to observe and react to data changes on a Vue instance: **watch properties**.
+* **Watchers**: While computed properties are more appropriate in most cases, there are times when a custom watcher is necessary. That’s why Vue provides a more generic way to react to data changes through the watch option. This is most useful when you want to perform asynchronous or expensive operations in response to changing data.
 
 
 ## Testing
