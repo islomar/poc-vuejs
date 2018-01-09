@@ -49,6 +49,9 @@ Playing around with Vue.js :-)
 * Vue does provide a more generic way to observe and react to data changes on a Vue instance: **watch properties**.
 * **Watchers**: While computed properties are more appropriate in most cases, there are times when a custom watcher is necessary. That’s why Vue provides a more generic way to react to data changes through the watch option. This is most useful when you want to perform asynchronous or expensive operations in response to changing data.
 
+## Routing
+Simple routing example: https://github.com/chrisvfritz/vue-2.0-simple-routing-example
+
 
 ## Testing
 * https://blog.octo.com/en/tdd-with-vue-js/
