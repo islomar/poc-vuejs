@@ -46,4 +46,9 @@ describe('HelloWorld.vue', () => {
     expect(vm.$el.querySelector('.hello div.counter').textContent)
       .to.equal('48')
   })
+
+  // $options returns all options necessary to the instantiation of the vue, such as its name, its methods, its directives or its components.
+  it('should check the name of my vue', () => {
+    expect(vm.$options.name).to.equal('HelloWorld')
+  })
 })
