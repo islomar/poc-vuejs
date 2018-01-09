@@ -34,6 +34,12 @@ Playing around with Vue.js :-)
 * Interpolations
     * Text
     * Raw HTML: Dynamically rendering arbitrary HTML on your website can be very dangerous because it can easily lead to XSS vulnerabilities. Only use HTML interpolation on trusted content and never on user-provided content.
+* **Directives** are special attributes with the v- prefix. Directive attribute values are expected to be a single JavaScript expression (with the exception for v-for, which will be discussed later). A directive’s job is to reactively apply side effects to the DOM when the value of its expression changes.
+* Some directives can take **arguments** denoted by a colon after the directive name, e.g. `<a v-bind:href="url">`
+* **Modifiers**: Modifiers are special postfixes denoted by a dot, which indicate that a directive should be bound in some special way. E.g. `<form v-on:submit.prevent="onSubmit">`
+* Shorthands:
+  * v-bind: `<a v-bind:href="url">`  >>  `<a :href="url">`
+  * v-click: `<a v-on:click="doSomething">` >> `<a @click="doSomething">`
 
 
 ## Testing
