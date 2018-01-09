@@ -25,4 +25,25 @@ describe('HelloWorld.vue', () => {
     expect(vm.$el.querySelector('.hello h1').textContent)
       .to.equal('plop')
   })
+
+  it('should create a counter with zero value', () => {
+    expect(vm.$data.counter).to.equal(0)
+  })
+
+  it('should render counter with counter data value', () => {
+    // Given
+    const data = {
+      data: {
+        counter: 48
+      }
+    }
+    const Constructor = Vue.extend(HelloWorld)
+
+    // When
+    vm = new Constructor(data).$mount()
+
+    // Then
+    expect(vm.$el.querySelector('.hello div.counter').textContent)
+      .to.equal('48')
+  })
 })
