@@ -4,6 +4,7 @@ Playing around with Vue.js :-)
 ## Introduction
 * Vue.js is an MIT-licensed open source project.
 * Vue (pronounced /vjuː/, like view) is a progressive framework for building user interfaces.
+* **main.js** is the place where the Vue application is initialized
 * **Composing with components**: In Vue, a component is essentially a Vue instance with pre-defined options
 * example of what an app’s template might look like with components:
 ```
@@ -35,6 +36,7 @@ Playing around with Vue.js :-)
     * Text
     * Raw HTML: Dynamically rendering arbitrary HTML on your website can be very dangerous because it can easily lead to XSS vulnerabilities. Only use HTML interpolation on trusted content and never on user-provided content.
 * **Directives** are special attributes with the v- prefix. Directive attribute values are expected to be a single JavaScript expression (with the exception for v-for, which will be discussed later). A directive’s job is to reactively apply side effects to the DOM when the value of its expression changes.
+  * The **v-model** directive creates a two-way binding on an input element or a component.
 * Some directives can take **arguments** denoted by a colon after the directive name, e.g. `<a v-bind:href="url">`
 * **Modifiers**: Modifiers are special postfixes denoted by a dot, which indicate that a directive should be bound in some special way. E.g. `<form v-on:submit.prevent="onSubmit">`
 * Shorthands:
