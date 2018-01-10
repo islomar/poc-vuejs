@@ -17,6 +17,11 @@ describe('HelloWorld.vue', () => {
     expect(vm.$data.msg).to.equal('Welcome to Your Vue.js App')
   })
 
+  it('should show all the links', () => {
+    expect(vm.$el.querySelectorAll('a').length)
+    .to.equal(9)
+  })
+
   // Another solution is to directly provide the variable to the test constructor.
   it('should render correct contents', () => {
     const data = {
