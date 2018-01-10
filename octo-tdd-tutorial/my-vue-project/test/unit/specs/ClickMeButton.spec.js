@@ -35,4 +35,14 @@ describe('ClickMeButton.vue', () => {
       expect(vm.$emit).to.have.been.calledWith('buttonHasBeenClicked')
     })
   })
+
+  it('should emit an event when button is clicked', () => {
+    // given
+    sinon.spy(vm, '$emit')
+    const button = vm.$el.querySelector('button')
+    // when
+    button.click()
+    // then
+    expect(vm.$emit).to.have.been.calledWith('buttonHasBeenClicked')
+  })
 })
