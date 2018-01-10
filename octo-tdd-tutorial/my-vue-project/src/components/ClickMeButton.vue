@@ -5,8 +5,13 @@
 </template>
 
 <script>
-export default {
-  name: 'clickMeButton',
-  props: ['message']
-}
-</script>
+  export default {
+    name: 'clickMeButton',
+    props: ['message'],
+    methods: {
+      onButtonClick: function () {
+        this.$emit('buttonHasBeenClicked')
+      }
+    }
+  }
+ </script>

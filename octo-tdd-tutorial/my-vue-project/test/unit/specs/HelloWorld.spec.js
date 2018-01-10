@@ -66,4 +66,14 @@ describe('HelloWorld.vue', () => {
     expect(vm.$el.querySelector('.clickMeButton button').textContent)
     .to.equal('Increment counter')
   })
+
+  describe('incrementCounter', function () {
+    it('should increment the counter to 1', () => {
+      // When
+      vm.incrementCounter()
+
+      // Then
+      expect(vm.$data.counter).to.equal(1)
+    })
+  })
 })
