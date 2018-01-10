@@ -1,6 +1,9 @@
 import Vue from 'vue'
 import HelloWorld from '@/components/HelloWorld'
 import ClickMeButton from '@/components/ClickMeButton'
+import VueResource from 'vue-resource'
+
+Vue.use(VueResource)
 
 describe('HelloWorld.vue', () => {
   let vm
@@ -86,5 +89,79 @@ describe('HelloWorld.vue', () => {
 
     // then
     expect(vm.$data.counter).to.equal(1)
+  })
+
+  describe('incrementFromTheDice()', () => {
+    it('should call api to get the dice number', () => {
+      // given
+      sinon.stub(Vue.http, 'get').returnsPromise()
+
+      // construct vue
+      const Constructor = Vue.extend(HelloWorld)
+      const vm = new Constructor().$mount()
+
+      // when
+      vm.incrementFromTheDice()
+
+      // then
+      expect(Vue.http.get).to.have.been.calledWith('http://setgetgo.com/rollthedice/get.php')
+
+      // after
+      Vue.http.get.restore()
+    })
+  })
+
+  it('should call increment counter from API answer', () => {
+    // given
+    const promiseCall = sinon.stub(Vue.http, 'get').returnsPromise()
+    promiseCall.resolves({ body: '5' })
+
+    // construct vue
+    const Constructor = Vue.extend(HelloWorld)
+    const vm = new Constructor({ data: { counter: 6 } }).$mount()
+
+    // when
+    vm.incrementFromTheDice()
+
+    // then
+    expect(vm.$data.counter).to.equal(11)
+
+    // after
+    Vue.http.get.restore()
+  })
+
+  it('should reinit counter when api rejects error', () => {
+    // given
+    const promiseCall = sinon.stub(Vue.http, 'get').returnsPromise()
+    promiseCall.rejects()
+
+    // construct vue
+    const Constructor = Vue.extend(HelloWorld)
+    const vm = new Constructor({ data: { counter: 6 } }).$mount()
+
+    // when
+    vm.incrementFromTheDice()
+
+    // then
+    expect(vm.$data.counter).to.equal(0)
+
+    // after
+    Vue.http.get.restore()
+  })
+
+  it('should incrementFromTheDice when button roll-the-dice is clicked', () => {
+    // given
+    let button = vm.$el.querySelector('button.roll-the-dice')
+    const promiseCall = sinon.stub(Vue.http, 'get').returnsPromise()
+    promiseCall.resolves({ body: '5' })
+
+    // when
+    button.click()
+
+    // then
+    expect(vm.$data.counter).to.equal(5)
+
+    // after
+    Vue.http.get.restore()
   })
 })

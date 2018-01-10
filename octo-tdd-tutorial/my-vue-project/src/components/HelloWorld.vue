@@ -1,5 +1,6 @@
 <template>
   <div class="hello">
+    <button class="roll-the-dice" v-on:click="incrementFromTheDice">ROLL THE DIE</button>
     <click-me-button message="Increment counter" v-on:buttonHasBeenClicked="incrementCounter"></click-me-button>
     <div class="counter">{{ counter }}</div>
     <h1>{{ msg }}</h1>
@@ -23,24 +24,33 @@
 </template>
 
 <script>
-import ClickMeButton from '../components/ClickMeButton'
-export default {
-  name: 'HelloWorld',
-  components: {
-    ClickMeButton
-  },
-  data () {
-    return {
-      msg: 'Welcome to Your Vue.js App',
-      counter: 0
-    }
-  },
-  methods: {
-    incrementCounter: function () {
-      this.counter += 1
+  import ClickMeButton from '../components/ClickMeButton'
+  export default {
+    name: 'HelloWorld',
+    components: {
+      ClickMeButton
+    },
+    data () {
+      return {
+        msg: 'Welcome to Your Vue.js App',
+        counter: 0
+      }
+    },
+    methods: {
+      incrementCounter: function () {
+        this.counter += 1
+      },
+      incrementFromTheDice: function () {
+        this.$http.get('http://setgetgo.com/rollthedice/get.php')
+          .then((response) => {
+            this.counter += parseInt(response.body)
+          }, () => {
+            console.log('La Base semble être KO !')
+            this.counter = 0
+          })
+      }
     }
   }
-}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
