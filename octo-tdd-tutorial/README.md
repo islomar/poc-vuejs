@@ -7,6 +7,7 @@ Written on 16.04.2017
 
 It uses webpack, karma, mocha, sinon, chai, eslint and npm.
 
-`vue init webpack my-vue-project`
-`npm run dev`
-http://localhost:8080/
+## How to run it
+* `vue init webpack my-vue-project`
+* `npm run dev`
+* http://localhost:8080/

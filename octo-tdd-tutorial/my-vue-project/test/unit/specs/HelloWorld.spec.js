@@ -56,5 +56,14 @@ describe('HelloWorld.vue', () => {
   it('should include a clickMeButton', () => {
     const clickMeButton = vm.$options.components.ClickMeButton
     expect(clickMeButton).to.contain(ClickMeButton)
-  })  
+  })
+
+  it('should define a message to put inside the clickMeButton', () => {
+    expect(vm.$options.components.ClickMeButton.props).to.haveOwnProperty('message')
+  })
+
+  it('should verify textContent of the Click Me Button', () => {
+    expect(vm.$el.querySelector('.clickMeButton button').textContent)
+    .to.equal('Increment counter')
+  })
 })
