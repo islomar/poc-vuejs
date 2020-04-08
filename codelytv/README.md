@@ -1,6 +1,6 @@
 # CodelyTV course: TDD with VueJS
-
-https://github.com/codingstones/codelytv-vue-basic
+* https://github.com/codingstones/codelytv-vue-basic
+* https://medium.com/coding-stones/tagged/vue
 
 
 Initial readings
@@ -24,6 +24,3 @@ VueJS is reactive by default: it detects automatically changes in the variables.
 Quasar:
 * https://quasar-framework.org/
 * Components library for web graphics (designed to work with VueJS)
-
-## Pending
-* Copy codely.tv sourcecode here.
